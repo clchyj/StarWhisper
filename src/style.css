@@ -1,0 +1,182 @@
+/* 星语者 - AI塔罗疗愈师 全局样式 */
+
+/* 重置样式 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #0a0a1a;
+  color: #e0d0ff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* 链接样式 */
+a {
+  color: #8a63ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #a080ff;
+}
+
+/* 按钮重置 */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* 输入框重置 */
+input,
+textarea,
+select {
+  font-family: inherit;
+  outline: none;
+}
+
+/* 滚动条基础样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(138, 99, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(138, 99, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(138, 99, 255, 0.5);
+}
+
+/* 选中文字样式 */
+::selection {
+  background: rgba(138, 99, 255, 0.4);
+  color: #fff;
+}
+
+/* 禁用状态 */
+[disabled] {
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+/* 渐变文字效果 */
+.gradient-text {
+  background: linear-gradient(135deg, #e0d0ff 0%, #8a63ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 发光效果 */
+.glow {
+  box-shadow: 0 0 20px rgba(138, 99, 255, 0.4);
+}
+
+/* 动画：淡入 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 动画：脉冲 */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* 动画：星星闪烁 */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.twinkle {
+  animation: twinkle 3s infinite;
+}
+
+/* 卡片悬浮效果 */
+.card-hover {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(138, 99, 255, 0.3);
+}
+
+/* 神秘背景纹理 */
+.mystic-bg {
+  background-image:
+    radial-gradient(ellipse at top, rgba(138, 99, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(100, 50, 200, 0.1) 0%, transparent 50%);
+}
+
+/* 星空背景 */
+.starry-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.starry-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 60% 20%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 80% 50%, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1.5px 1.5px at 10% 60%, rgba(138, 99, 255, 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 90% 80%, rgba(138, 99, 255, 0.3), transparent);
+  pointer-events: none;
+}
